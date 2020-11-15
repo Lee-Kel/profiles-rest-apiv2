@@ -1,0 +1,4 @@
+Required packages for Vagrant box venv (Python virtual environment)
+
+1. pip install django=2.2
+2. pip install djangorestframework==3.9.2

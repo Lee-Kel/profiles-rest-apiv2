@@ -1,4 +1,4 @@
-ssh-kegen -t rsa -b 4096 -C "leekellet@hotmail.com"
+ssh-keygen -t rsa -b 4096 -C "leekellet@hotmail.com"
 
 
 echo "# profiles-rest-apiv2" >> README.md
@@ -6,9 +6,38 @@ git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
+
+This is wrong and will not work with an ssh key
 git remote add origin https://github.com/Lee-Kel/profiles-rest-apiv2.git
+
+Use this instead
+git remote set-url origin git@github.com:Lee-Kel/profiles-rest-apiv2.git
+
+
 git push -u origin main
 
 VAGRANT
 
 vagrant init ubuntu/bionic64
+
+
+Create venv on vagrant box
+
+   python -m venv ~/env
+
+Activate the Virtual env
+
+    source ~/env/bin/activate
+
+Create new django project
+   django-admin.py startproject profiles_project .
+
+
+settings.py
+
+Add these apps to: INSTALLED_APPS = [
+
+    'profiles_api',
+    'rest_framework',
+    'rest_framework.authtoken',
+]
