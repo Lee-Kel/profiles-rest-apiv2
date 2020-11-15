@@ -1,0 +1,14 @@
+ssh-kegen -t rsa -b 4096 -C "leekellet@hotmail.com"
+
+
+echo "# profiles-rest-apiv2" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Lee-Kel/profiles-rest-apiv2.git
+git push -u origin main
+
+VAGRANT
+
+vagrant init ubuntu/bionic64
